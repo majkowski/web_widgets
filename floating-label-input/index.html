@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="input-container">
+        <input
+            type="text"
+            id="username"
+            class="text-input"
+            autocomplete="off"
+            placeholder="Enter your username"
+            required
+        >
+        <label class="label" for="username">Username</label>
+
+    </div>
+
+
+
+<script>
+document.querySelectorAll(".text-input").forEach((element) => {
+    element.addEventListener("blur", (event) => {
+        if (event.target.value != "") {
+            event.target.nextElementSibling.classList.add("filled");
+        } else {
+            event.target.nextElementSibling.classList.remove("filled");
+        }
+    });
+});
+</script>
+
+
+</body>
+</html>
+
